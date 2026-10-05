@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue Mínimo sin instalación</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <div id="app">
+    <h1>{{ mensaje }}</h1>
+    <button @click="contador++">Contador: {{ contador }}</button>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+      setup() {
+        const mensaje = ref('¡Hola de forma directa!')
+        const contador = ref(0)
+        
+        return { mensaje, contador }
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+</html>
